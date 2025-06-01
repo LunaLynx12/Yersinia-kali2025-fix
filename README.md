@@ -19,17 +19,22 @@ apt purge --auto-remove yersinia
 wget https://archive.kali.org/archive-keyring.gpg -O /usr/share/keyrings/kali-archive-keyring.gpg
 ```
 
-### 3. Clone Yersinia Repository
+### 3. Update and Upgrade System
+```bash
+sudo apt-get update && sudo apt-get upgrade -y
+```
+
+### 4. Clone Yersinia Repository
 ```bash
 git clone https://github.com/tomac/yersinia.git /opt/yersinia
 ```
 
-### 4. Install Dependencies
+### 5. Install Dependencies
 ```bash
 apt install autoconf libgtk-3-dev libnet1-dev libpcap-dev libgtk2.0-dev -y
 ```
 
-### 5. Apply Necessary Fixes
+### 6. Apply Necessary Fixes
 Navigate to the Yersinia directory:
 
 ```bash
@@ -37,7 +42,7 @@ cd /opt/yersinia
 ```
 Replace the original admin.c and admin.h files with the fixed versions from this repository.
 
-### 6. Build and Install Yersinia
+### 7. Build and Install Yersinia
 ```bash
 ./autogen.sh
 ./configure --with-gtk
@@ -45,7 +50,7 @@ make
 make install
 ```
 
-### 7. Launch Yersinia (GUI Mode)
+### 8. Launch Yersinia (GUI Mode)
 ```bash
 yersinia -G
 ```
